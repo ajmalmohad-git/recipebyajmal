@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: sans-serif;
+    background: rgb(230, 229, 227);
+}
+.offpage
+{
+    margin:5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.onpage
+{
+    height:40vh;
+    background: #5400b3;
+    margin-bottom:15vh;
+    border-bottom-left-radius:20px ;
+}
+.onpage h1
+{
+    text-align: center;
+    padding-top:4vh;
+    font-size: 5vw;
+    color:rgb(226, 202, 202);
+    font-variant: small-caps;
+}
+.onpage .ingridient
+{
+    margin-top:10vh;
+    padding:1vh;
+    position: relative;
+    left:36%;
+    width:20%;
+    border-radius: 5px;
+    border:none;
+}
+.onpage .submitbtn
+{
+    margin-top:10vh;
+    padding:1vh;
+    position: relative;
+    left:36%;
+    width:8%;
+    border-radius: 5px;
+    border:none;
+    background: rgb(228, 19, 165);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+.gencontainer
+{
+    color:#3b2c2d;
+    height:50vh;
+    width: 40vw; 
+    margin: 5vh;
+    overflow: hidden;
+    background: #8ad6e9;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr ;
+    grid-template-rows: 1fr ;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgb(75, 74, 74);
+    overflow: hidden;
+}
+.genimg
+{
+    height:100%;
+    width:100%;
+    grid-row: 1/2;
+    grid-column:2/3 ;
+}
+.geninfo
+{
+    margin:5%;
+    margin-top:8%;
+}
+.genhead
+{
+    margin:3vh;
+    font-size:25px;
+}
+.genpara
+{
+    margin:3vh;
+    font-size:15px;
+    font-weight: 600;
+    color:rgb(148, 93, 93);
+}
+a
+{
+    text-decoration: none;
+}
+.genbtn
+{
+    margin-top:5vh;
+    background:rgb(228, 19, 165);
+    color:white;
+    padding:1vh;
+    margin-left:5%;
+    border:none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.genbtn2
+{
+    margin-top:2vh;
+    background:rgb(228, 19, 165);
+    color:white;
+    padding:1vh;
+    margin-left:5%;
+    border:none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.genback
+{
+    display: none;
+}
+
+
+
+@media only screen and (max-width:420px)
+{
+    .offpage
+{
+    margin:4%;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto;
+}
+.gencontainer
+{
+    grid-template-columns: 1fr ;
+    grid-template-rows:1fr 1.4fr;
+    height:80vh;
+    width: 80vw; 
+    margin: 5vh;
+}
+.genimg
+{
+    grid-row: 1/2;
+    grid-column:1/2 ;
+    width:100%;
+}
+.onpage h1
+{
+    padding-top:10vh;
+    font-size: 10vw;
+}
+.onpage .ingridient
+{
+    left:16%;
+    width:50%;
+}
+.onpage .submitbtn
+{
+
+    left:16%;
+    width:20%;
+}
+}
