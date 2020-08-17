@@ -6,7 +6,7 @@
 body
 {
     font-family: sans-serif;
-    background: rgb(230, 229, 227);
+    background: rgb(189, 211, 206);
 }
 .offpage
 {
@@ -18,21 +18,22 @@ body
 .onpage
 {
     height:40vh;
-    background: #5400b3;
+    background: #010727;
     margin-bottom:15vh;
-    border-bottom-left-radius:20px ;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius:15px ;
 }
 .onpage h1
 {
     text-align: center;
     padding-top:4vh;
-    font-size: 5vw;
-    color:rgb(226, 202, 202);
+    font-size: 4vw;
+    color:rgb(255, 180, 67);
     font-variant: small-caps;
 }
 .onpage .ingridient
 {
-    margin-top:10vh;
+    margin-top:8vh;
     padding:1vh;
     position: relative;
     left:36%;
@@ -42,25 +43,25 @@ body
 }
 .onpage .submitbtn
 {
-    margin-top:10vh;
+    margin-top:8vh;
     padding:1vh;
     position: relative;
     left:36%;
     width:8%;
     border-radius: 5px;
     border:none;
-    background: rgb(228, 19, 165);
-    color: rgb(255, 255, 255);
+    background: rgb(49, 119, 124);
+    color: rgb(238, 236, 236);
     font-weight: 600;
 }
 .gencontainer
 {
-    color:#3b2c2d;
+    color:rgb(255, 180, 67);
     height:50vh;
     width: 40vw; 
     margin: 5vh;
     overflow: hidden;
-    background: #8ad6e9;
+    background: #010727;
     display: grid;
     grid-template-columns: 1.2fr 1fr ;
     grid-template-rows: 1fr ;
@@ -72,6 +73,8 @@ body
 {
     height:100%;
     width:100%;
+    object-fit: cover;
+    overflow: hidden;
     grid-row: 1/2;
     grid-column:2/3 ;
 }
@@ -99,7 +102,7 @@ a
 .genbtn
 {
     margin-top:5vh;
-    background:rgb(228, 19, 165);
+    background:rgb(49, 119, 124);
     color:white;
     padding:1vh;
     margin-left:5%;
@@ -110,7 +113,7 @@ a
 .genbtn2
 {
     margin-top:2vh;
-    background:rgb(228, 19, 165);
+    background:rgb(49, 119, 124);
     color:white;
     padding:1vh;
     margin-left:5%;
