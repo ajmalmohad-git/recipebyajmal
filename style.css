@@ -6,7 +6,7 @@
 body
 {
     font-family: sans-serif;
-    background: rgb(189, 211, 206);
+    background: rgb(207, 223, 219);
 }
 .offpage
 {
@@ -285,3 +285,97 @@ a
 }
 }
 
+
+
+
+.loader-wrapper
+{
+    height: 100vh;
+    width:100%;
+    position: fixed;
+    background:#010727;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid rgb(255, 180, 67);
+    animation: loader 2s infinite ease;
+    z-index:99;
+  }
+  
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(255, 180, 67);
+    animation: loader-inner 2s infinite ease-in;
+    z-index:99;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    25% {
+      transform: rotate(180deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    75% {
+      transform: rotate(360deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loader-inner {
+    0% {
+      height: 0%;
+    }
+    
+    25% {
+      height: 0%;
+    }
+    
+    50% {
+      height: 100%;
+    }
+    
+    75% {
+      height: 100%;
+    }
+    
+    100% {
+      height: 0%;
+    }
+  }
+
+ .hidden
+  {
+      animation:FadeOut 1s;
+      animation-fill-mode: forwards;
+  }
+
+  @keyframes FadeOut
+  {
+      100%
+      {
+        opacity: 0;
+        visibility: hidden;
+        display:none;
+      }
+      
+  }

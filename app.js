@@ -1,3 +1,10 @@
+window.addEventListener('load',()=>{
+  let loader = document.querySelector('.loader-wrapper');
+  loader.classList.add('hidden')
+})
+
+
+
 let sec0 = document.querySelector("#sec0");
 let sec1 = document.querySelector("#sec1");
 let sec2 = document.querySelector("#sec2");
