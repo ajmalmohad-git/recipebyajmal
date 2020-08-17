@@ -52,6 +52,33 @@ submitBtn.addEventListener("click", () => {
   readJson(url);
 });
 
+
+userQuery.addEventListener("keydown", function(event) {
+  if(userQuery.value == '')
+  {
+    return
+  }
+  else if (event.key === "Enter") {
+      event.preventDefault();
+      sectionArray.forEach((elem)=>{
+        elem.innerHTML = '';
+    })
+    api.resultCount = selection.value;
+    whattodo.style.display = "none";
+    api.Ingredient = userQuery.value;
+    let url =
+      api.baseUrl +
+      api.Ingredient +
+      api.appid +
+      api.apikey +
+      api.resultNeed +
+      api.resultCount;
+    userQuery.value = "";
+    readJson(url);
+  }
+}); 
+
+
 let displayOutput = (result) => {
   let output = result.hits;
 
@@ -69,15 +96,19 @@ let displayOutput = (result) => {
     </div>
     `;
     eval(`sec${i}`).innerHTML = display;
-    showiingr(ingridientsgiven,i);
+    showiingr(ingridientsgiven,i,output[i]);
   });
 };
 
-let showiingr = (ingr,i)=>{
+let showiingr = (ingr,i,o)=>{
   sectionArray.forEach((elem)=>{
     elem.addEventListener('click',function(e){
       if(e.target && e.target.id== `btnPrepend${i}`){
-        swal(ingr);
+        swal({
+          title:o.recipe.label,
+          text: ingr,
+          button: "Back",
+        });
        }
     });
   })
