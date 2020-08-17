@@ -56,18 +56,29 @@ let displayOutput = (result) => {
   let output = result.hits;
 
   output.forEach((element, i) => {
-    let ingridientsgiven = output[i].recipe.ingredientLines;
+    let ingridientsgiven = output[i].recipe.ingredientLines.toString();
     let display = `
     <div class="gencontainer">
     <div class="geninfo">
     <h1 class="genhead">${output[i].recipe.label}</h1>
     <p class="genpara">${output[i].recipe.healthLabels[0]} ${output[i].recipe.healthLabels[1]}</p>
-    <button class="genbtn2">Ingredients</button>
+    <button class="genbtn2" id='btnPrepend${i}'>Ingredients</button>
     <a href="${output[i].recipe.url}" target="_blank"><button class="genbtn">Preperation</button></a>
     </div>
     <img class="genimg" src="${output[i].recipe.image}">
     </div>
     `;
     eval(`sec${i}`).innerHTML = display;
+    showiingr(ingridientsgiven,i);
   });
 };
+
+let showiingr = (ingr,i)=>{
+  sectionArray.forEach((elem)=>{
+    elem.addEventListener('click',function(e){
+      if(e.target && e.target.id== `btnPrepend${i}`){
+        swal(ingr);
+       }
+    });
+  })
+}
