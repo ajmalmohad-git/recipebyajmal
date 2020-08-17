@@ -1,9 +1,7 @@
-window.addEventListener('load',()=>{
-  let loader = document.querySelector('.loader-wrapper');
-  loader.classList.add('hidden')
-})
-
-
+let loader = document.querySelector(".loader-wrapper");
+window.addEventListener("load", () => {
+  loader.classList.add("hidden");
+});
 
 let sec0 = document.querySelector("#sec0");
 let sec1 = document.querySelector("#sec1");
@@ -15,8 +13,8 @@ let sec6 = document.querySelector("#sec6");
 let sec7 = document.querySelector("#sec7");
 let sec8 = document.querySelector("#sec8");
 let sec9 = document.querySelector("#sec9");
-let sectionArray = [sec0,sec1,sec2,sec3,sec4,sec5,sec6,sec7,sec8,sec9];
-let selection = document.querySelector('#sel');
+let sectionArray = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9];
+let selection = document.querySelector("#sel");
 
 let api = {
   baseUrl: "https://api.edamam.com/search?q=",
@@ -30,11 +28,15 @@ let api = {
 
 let readJson = async (url) => {
   try {
+    whattodo.style.display = "block";
+    whattodo.textContent = "Loading....";
     let response = await fetch(url);
     let data = await response.json();
     displayOutput(data);
+    whattodo.style.display = "none";
   } catch (err) {
-    console.log(err);
+    whattodo.style.display = "block";
+    whattodo.textContent = "Something Went Wrong!";
   }
 };
 
@@ -42,9 +44,9 @@ let submitBtn = document.querySelector(".submitbtn");
 let userQuery = document.querySelector(".ingridient");
 let whattodo = document.querySelector(".whatto");
 submitBtn.addEventListener("click", () => {
-  sectionArray.forEach((elem)=>{
-      elem.innerHTML = '';
-  })
+  sectionArray.forEach((elem) => {
+    elem.innerHTML = "";
+  });
   api.resultCount = selection.value;
   whattodo.style.display = "none";
   api.Ingredient = userQuery.value;
@@ -59,17 +61,14 @@ submitBtn.addEventListener("click", () => {
   readJson(url);
 });
 
-
-userQuery.addEventListener("keydown", function(event) {
-  if(userQuery.value == '')
-  {
-    return
-  }
-  else if (event.key === "Enter") {
-      event.preventDefault();
-      sectionArray.forEach((elem)=>{
-        elem.innerHTML = '';
-    })
+userQuery.addEventListener("keydown", function (event) {
+  if (userQuery.value == "") {
+    return;
+  } else if (event.key === "Enter") {
+    event.preventDefault();
+    sectionArray.forEach((elem) => {
+      elem.innerHTML = "";
+    });
     api.resultCount = selection.value;
     whattodo.style.display = "none";
     api.Ingredient = userQuery.value;
@@ -83,8 +82,7 @@ userQuery.addEventListener("keydown", function(event) {
     userQuery.value = "";
     readJson(url);
   }
-}); 
-
+});
 
 let displayOutput = (result) => {
   let output = result.hits;
@@ -103,20 +101,20 @@ let displayOutput = (result) => {
     </div>
     `;
     eval(`sec${i}`).innerHTML = display;
-    showiingr(ingridientsgiven,i,output[i]);
+    showiingr(ingridientsgiven, i, output[i]);
   });
 };
 
-let showiingr = (ingr,i,o)=>{
-  sectionArray.forEach((elem)=>{
-    elem.addEventListener('click',function(e){
-      if(e.target && e.target.id== `btnPrepend${i}`){
+let showiingr = (ingr, i, o) => {
+  sectionArray.forEach((elem) => {
+    elem.addEventListener("click", function (e) {
+      if (e.target && e.target.id == `btnPrepend${i}`) {
         swal({
-          title:o.recipe.label,
+          title: o.recipe.label,
           text: ingr,
           button: "Back",
         });
-       }
+      }
     });
-  })
-}
+  });
+};
