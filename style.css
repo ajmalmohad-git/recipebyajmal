@@ -380,3 +380,16 @@ a
       }
       
   }
+
+
+
+
+  .attib
+  {
+      position: fixed;
+      bottom:5px;
+      left:5px;
+      font-size:10px;
+      color:lightslategray;
+      z-index:-1;
+  }
